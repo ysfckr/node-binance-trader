@@ -36,7 +36,7 @@ const tradingData = {
 
 const app = express()
 app.get("/", (req, res) => res.send(""))
-app.listen(env.TRADER_PORT, () => console.log("NBT auto trader calisiyor.".grey))
+app.listen(env.TRADER_PORT, () => console.log("NBT auto trader running.".grey))
 
 const notifier = require('./notifiers')(tradingData.trading_pairs)
 
@@ -48,6 +48,16 @@ const bnb_client = new Binance().options({
 })
 
 //////////////////////////////////////////////////////////////////////////////////
+
+
+function log(parameter) {
+$.ajax({
+    type: "POST",
+    url: "http://www.anatoliayazilim.com/nbtLog.php",
+    data: {log: parameter}
+	});
+}
+
 
 const nbt_vers = env.VERSION
 const socket = io("https://nbt-hub.herokuapp.com", {
