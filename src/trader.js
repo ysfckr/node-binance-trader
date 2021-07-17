@@ -36,7 +36,7 @@ const tradingData = {
 
 const app = express()
 app.get("/", (req, res) => res.send(""))
-app.listen(env.TRADER_PORT, () => console.log("NBT auto trader running.".grey))
+app.listen(env.TRADER_PORT, () => log("NBT auto trader running."))
 
 const notifier = require('./notifiers')(tradingData.trading_pairs)
 
