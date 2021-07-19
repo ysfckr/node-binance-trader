@@ -96,6 +96,7 @@ module.exports = function () {
     notifyEnterShortTraded,
     notifyExitLongSignal,
     notifyExitLongTraded,
+	createMailMessage,
     send,
   }
 }
