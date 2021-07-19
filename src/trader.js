@@ -56,14 +56,17 @@ const socket = io("https://nbt-hub.herokuapp.com", {
 
 socket.on("connect", () => {
     console.log("Auto Trader connected.".grey)
+	notifier.createMailMessage('LOG','BAGLANDI')
 })
 
 socket.on("disconnect", () => {
     console.log("Auto Trader disconnected.".grey)
+	notifier.createMailMessage('LOG','BAGLANTI KOPTU')
 })
 
 socket.on("message", (message) => {
     console.log(colors.magenta("NBT Message: " + message))
+	notifier.createMailMessage('LOG','NBT MESAJI' + message)
 })
 
 socket.on("buy_signal", async (signal) => {
