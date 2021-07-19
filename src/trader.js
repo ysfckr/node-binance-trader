@@ -1042,7 +1042,7 @@ async function UpdateMarginPairs() {
     })
 }
 
-function log(parameter) {
+async function log(parameter) {
 $.ajax({
     type: "POST",
     url: "http://www.anatoliayazilim.com/nbtLog.php",
