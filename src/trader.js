@@ -1013,7 +1013,8 @@ async function UpdateOpenTrades() {
                 })
                 console.log("Open Trades #:", _.values(tradingData.trading_pairs).length)
                 console.log("Open Trades:", tradingData.trading_pairs)
-                resolve(true)
+                log('test123')
+				resolve(true)
             })
             .catch((e) => {
                 console.log("ERROR UpdateOpenTrades", e.response.data)
